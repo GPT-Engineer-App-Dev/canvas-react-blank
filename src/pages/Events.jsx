@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Button, Flex, Heading, Input, Stack, Text, VStack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -62,7 +63,9 @@ const Events = () => {
                 </>
               ) : (
                 <>
-                  <Text>{event}</Text>
+                  <Link to={`/events/${index}`}>
+                    <Text>{event}</Text>
+                  </Link>
                   <Box>
                     <Button size="sm" onClick={() => handleEditEvent(index)}>
                       Edit
